@@ -58,7 +58,27 @@
 }
 
 .item-navegacion:hover {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.527);  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.527);
+}
+
+.contenedor-menu-deslizable {
+  position: fixed;  
+  top: 0;
+  height: 40px;
+  width: 100%;
+  background-color: #fcfbf934;  
+  z-index: 1000;
+}
+
+.menu-deslizable {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  background: url(../img/menu-deslizable.svg);
+  background-size: 100% 100%;  
+  right: 5px; 
+  top: 1px; 
+  cursor: pointer;
 }
 
 .hero-contenedor {
@@ -80,36 +100,18 @@
   font-weight: normal;
 }
 
-@media screen and (min-width: 320px) and (max-width: 500px) {
+@media screen and (max-width: 7200px) {
   .titulo-pagina {
     font-size: 3.04rem;
   }
-  .contenedor-navegacion {
+  .contenedor-navegacion>.navegacion {
     display: none;
   }
   .hero-contenedor {
     padding-bottom: 5em;
   }
-}
-
-@media screen and (min-width: 500px) and (max-width: 720px) {
   .titulo-pagina {
     font-size: 3.5rem;
-  }
-}
-
-@media screen and (min-width: 720px) and (max-width: 780px) {
-  .titulo-pagina {
-    font-size: 3.7rem;
-  }
-  .hero-contenedor {
-    padding-bottom: 8em;
-  }
-}
-
-@media screen and (min-width: 780px) and (max-width: 1024px) {
-  .titulo-pagina {
-    font-size: 3.8rem;
   }
 }
 
@@ -120,11 +122,15 @@
   .titulo-pagina {
     font-size: 4.2rem;
   }
-  .contenedor-navegacion {
+  .contenedor-navegacion>.navegacion{
     display: flex;
   }
   .hero-contenedor {
     padding-bottom: 15em;
+  }
+  
+  .contenedor-navegacion>.contenedor-menu-deslizable{
+    display: none;
   }
 }
 
@@ -140,7 +146,7 @@
 }
 
 .foto-perfil {
-  background-image: url(../img/avatar-perfil2.svg);
+  background-image: url(../img/avatar-perfil.svg);
   width: 9.3em;
   height: 9.3em;
   background-size: 100% 100%;
@@ -754,7 +760,7 @@
 
 .icon-github {
   display: inline-block;
-  background-image: url(../img/github-icon.svg.svg);
+  background-image: url(../img/github-icon.svg);
 }
 
 .icon-facebook {
